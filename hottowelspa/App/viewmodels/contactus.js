@@ -24,7 +24,7 @@
     function setcontactInfo(data) {
         vm.emailAddress = data.emailAddress;
         vm.telephoneNumber = data.telephoneNumber;
-        logger.log("Contact information loaded", null, "contact us", true);
+        logger.log("Contact information loaded", null, "Contact us", false);
     }
     //#endregion
 });

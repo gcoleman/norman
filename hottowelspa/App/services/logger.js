@@ -2,14 +2,14 @@ define(['durandal/system'],
     function (system) {
         var logger = {
             log: log,
-            logError: logError
+            logError: logError,
         };
 
         return logger;
 
         function log(message, data, source, showToast) {
             logIt(message, data, source, showToast, 'info');
-        }
+        }       
 
         function logError(message, data, source, showToast) {
             logIt(message, data, source, showToast, 'error');
@@ -28,8 +28,6 @@ define(['durandal/system'],
                 } else {
                     toastr.info(message);
                 }
-
             }
-
         }
     });
