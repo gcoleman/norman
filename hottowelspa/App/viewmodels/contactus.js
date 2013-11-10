@@ -12,10 +12,13 @@
     return vm;
 
     //#region Internal Methods
-    function activate() {       
+    function activate() {
+        $(function () {
             dataservice.getContactInfo(setcontactInfo);
             logger.log(title + ' View Activated', null, title, true);
-            return true;      
+            return true;   
+            
+        })
     }
 
     function setcontactInfo(data) {
