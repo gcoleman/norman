@@ -24,8 +24,6 @@ namespace hottowelspa.Utils
 
     public class StaticRoutes
     {
-        
-
         #region Constructor
         public static object LoadStaticRoutes(UrlHelper url)
         {
