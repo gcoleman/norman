@@ -1,0 +1,11 @@
+﻿@using hottowelspa.Utils;
+@using System.Web.Script.Serialization; 
+ 
+@{
+    JavaScriptSerializer ser = new JavaScriptSerializer();
+    var routes = ser.Serialize(StaticRoutes.LoadStaticRoutes(Url));
+}
+
+<script type="text/javascript">   
+   window.appRoutes = @Html.Raw(routes)
+</script>
