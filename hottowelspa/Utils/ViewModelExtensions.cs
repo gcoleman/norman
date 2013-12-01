@@ -1,10 +1,13 @@
 ﻿using hottowelspa.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json.Serialization;
+using System.IO;
 
 namespace hottowelspa.Utils
 {
@@ -13,13 +16,14 @@ namespace hottowelspa.Utils
 
         public static JsonResult AsJsonResult(this ViewModelBase model)
         {
-            var serialiser = new JavaScriptSerializer();
+            var serialiser = new JsonSerializer();
 
-            var result = serialiser.Serialize(model);
+            var writer = new StringWriter();
+            serialiser.Serialize(writer,model);
 
             return new JsonResult()
             {
-                Data = result,
+                Data = writer.ToString(),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
